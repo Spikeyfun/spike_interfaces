@@ -16,5 +16,15 @@ git = "https://github.com/Entropy-Foundation/aptos-core.git"
 rev = "dev"
 subdir = "aptos-move/framework/supra-framework"
 
+[dependencies.amm]
+git = "https://github.com/Spikeyfun/spike_interfaces.git"
+rev = "main"
+subdir = "amm"
+
+[dependencies.AptosToken]
+git = "https://github.com/Entropy-Foundation/aptos-core.git"
+rev = "dev"
+subdir = "aptos-move/framework/aptos-token"
+
 [dev-dependencies]
 
