@@ -1,6 +1,5 @@
 module spike_staking::router_stake {
     use std::string::String;
-    use aptos_token::token;
 
     native public entry fun unwrap<CoinType>(
         sender: &signer,
