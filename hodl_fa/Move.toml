@@ -17,7 +17,7 @@ rev = "dev"
 subdir = "aptos-move/framework/supra-framework"
 
 [dependencies.amm]
-git = "https://github.com/jarvisdegen/blabla.git"
+git = "https://github.com/Spikeyfun/spike_interfaces.git"
 rev = "main"
 subdir = "amm"
 
