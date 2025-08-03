@@ -5,7 +5,7 @@ authors = []
 
 [addresses]
 
-spike_fun = "0x2e1e06a4d4d16fb89474347f51370e06318100d01982f57d6d1d7f8293e795b5"
+spike_staking = "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083"
 
 [dev-addresses]
 
