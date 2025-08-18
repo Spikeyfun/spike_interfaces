@@ -115,6 +115,11 @@ module spike_staking::stake_fa {
         pool_key: PoolIdentifier
     );
 
+        /// Disables local "emergency state" for the specific pool at `pool_addr`.
+    native public fun disable_emergency(
+        admin: &signer, 
+        pool_key: PoolIdentifier
+    );
 
     /// Withdraws all the user stake and nft from the pool in "emergency state".
     native public fun emergency_unstake(
