@@ -115,6 +115,12 @@ module spike_staking::stake_fa {
         pool_key: PoolIdentifier
     );
 
+        /// Enables local "emergency state" for the specific pool at `pool_addr`.
+    native public fun disable_emergency(
+        admin: &signer, 
+        pool_key: PoolIdentifier
+    );
+
         /// Disables local "emergency state" for the specific pool at `pool_addr`.
     native public fun disable_emergency(
         admin: &signer, 
