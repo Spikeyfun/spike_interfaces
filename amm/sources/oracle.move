@@ -13,16 +13,16 @@ module spike_amm::amm_oracle {
   native public fun update_block_info(): bool;
 
   #[view]
-  native public fun get_quantity(token: Object<Metadata>, amount: u64): u64;
+  native public fun get_quantity_v2(token: Object<Metadata>, amount: u64): u128;
 
   #[view]
-  native public fun get_average_price(token: Object<Metadata>): u128;
+  native public fun get_average_price_v2(token: Object<Metadata>): u128;
 
   #[view]
   native public fun get_current_price(token: Object<Metadata>): u128;
 
   #[view]
-  native public fun get_lp_token_value(lp_token: Object<Pair>, amount: u64): u64;
+  native public fun get_lp_token_value_v2(lp_token: Object<Pair>, amount: u64): u128;
 
   #[view]
   native public fun get_anchor_token(): Object<Metadata>;
