@@ -13,7 +13,7 @@
 /// adjusting the `raw` price according to the provided decimals.
 ///
 /// This ensures accurate and consistent pricing across both legacy assets  
-/// and Spike’s AMM ecosystem.
+/// and Spike AMM ecosystem.
 ///
 module spike_amm::price_aggregator {
 
@@ -23,3 +23,4 @@ module spike_amm::price_aggregator {
     #[view]
     native public fun get_coin_price_in_usd<CoinType>(): (u128, u16);
 }
+
