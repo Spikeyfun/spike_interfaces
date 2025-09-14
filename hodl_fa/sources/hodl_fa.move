@@ -1,4 +1,4 @@
-module spike_fun::hodl_fa {
+module hodl_fa::hodl_fa {
     use std::option::{Option};
     use std::string::{String};
 
@@ -284,3 +284,4 @@ module spike_fun::hodl_fa {
     native public fun get_user_boosted_pools(user_addr: address): vector<PoolIdentifier>;
 
 }
+
