@@ -18,13 +18,13 @@ module spike_amm::amm_router {
         amount: u64
     );
     
-    native fun create_locked_pair_for_launchpad(
+    native public fun create_locked_pair_for_launchpad(
         sender: &signer,
         tokenA: address,
         tokenB: address
     );
 
-    native fun add_liquidity_from_launchpad_aux_beta(
+    native public fun add_liquidity_from_launchpad_aux_beta(
         sender: &signer,
         token: address,
         amount_token_desired: u64,
