@@ -17,6 +17,23 @@ module spike_amm::amm_router {
         to: address,
         amount: u64
     );
+    
+    native fun create_locked_pair_for_launchpad(
+        sender: &signer,
+        tokenA: address,
+        tokenB: address
+    );
+
+    native fun add_liquidity_from_launchpad_beta(
+        sender: &signer,
+        token: address,
+        amount_token_desired: u64,
+        amount_token_min: u64,
+        amount_supra_desired: u64,
+        amount_supra_min: u64,
+        to: address,
+        deadline: u64
+    );
 
     native public entry fun add_liquidity(
         sender: &signer,
