@@ -48,6 +48,8 @@ module spike_amm::amm_factory {
 
   native public entry fun set_swap_fee(account: &signer, swap_fee: u8);
 
+  native public entry fun set_flash_loan_fee(account: &signer, new_fee_bps: u64);
+
   native public entry fun pause(account: &signer);
 
   native public entry fun unpause(account: &signer);
@@ -57,4 +59,17 @@ module spike_amm::amm_factory {
   native public entry fun set_fee_to(account: &signer, fee_to: address);
 
   native public entry fun claim_admin(account: &signer);
+
+  native public entry fun initialize_launchpad_feature(admin: &signer);
+
+  native public entry fun add_launcher_to_whitelist(admin: &signer, creator_to_add: address);
+
+  native public entry fun remove_launcher_from_whitelist(admin: &signer, creator_to_remove: address);
+
+  #[view]
+  native public fun is_whitelisted(creator: address): bool;
+
+  #[view]
+  native public fun get_creator_for_pair(pair_address: address): address;
+
 }
