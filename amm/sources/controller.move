@@ -13,7 +13,10 @@ module spike_amm::amm_controller {
   native public fun get_admin(): address;
 
   #[view]
-  native public fun get_fee_on(): bool;
+  native public fun get_fee_on(): address;
+
+  #[view]
+  native public fun get_flash_loan_fee_bps(): u64;
 
   native public fun assert_paused();
 
