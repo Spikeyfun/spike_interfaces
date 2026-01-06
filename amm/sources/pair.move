@@ -1,11 +1,17 @@
 module spike_amm::amm_pair {
-  use supra_framework::fungible_asset::{FungibleStore, MintRef, BurnRef, TransferRef, Metadata};
+  use supra_framework::fungible_asset::{FungibleStore, FungibleAsset, MintRef, BurnRef, TransferRef, Metadata};
   use supra_framework::object::{Object};
   
   struct LPTokenRefs has store {
     burn_ref: BurnRef,
     mint_ref: MintRef,
     transfer_ref: TransferRef,
+  }
+
+  struct FlashLoanReceipt {
+    amount_loaned: u64,
+    fee: u64,
+    token_borrowed: Object<Metadata>
   }
 
   #[resource_group_member(group = supra_framework::object::ObjectGroup)]
@@ -19,6 +25,10 @@ module spike_amm::amm_pair {
     k_last: u128,
     locked: bool,
   }
+
+  native public fun flash_loan(pair: Object<Pair>, token_to_borrow: Object<Metadata>, amount: u64): (FungibleAsset, FlashLoanReceipt);
+
+  native public fun repay_flash_loan(pair: Object<Pair>, payment: FungibleAsset, receipt: FlashLoanReceipt);
 
   #[view]
   native public fun get_reserves(pair: Object<Pair>): (u64, u64, u64);
@@ -37,6 +47,7 @@ module spike_amm::amm_pair {
 
   #[view]
   native public fun balance0(pair: Object<Pair>): u64;
+  
   #[view]
   native public fun balance1(pair: Object<Pair>): u64;
 
