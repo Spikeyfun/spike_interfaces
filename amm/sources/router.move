@@ -230,8 +230,7 @@ module spike_amm::amm_router {
         deadline: u64
     ) : (u64, u64);
 
-    // SWAP 
-
+    //MASTER SWAP FUNCTION
     native public fun swap(
         sender: &signer,
         token_in: FungibleAsset,
@@ -239,7 +238,7 @@ module spike_amm::amm_router {
         to: address,
     ): FungibleAsset;
 
-
+    //SWAP FUNCTIONS FUNGIBLE ASSETS
     native public entry fun swap_exact_tokens_for_tokens(
         sender: &signer,
         amount_in: u64,
