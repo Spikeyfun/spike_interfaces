@@ -9,7 +9,6 @@ module spike_amm::flash_loan_router {
     // it was only used in internal logic.
     // It is not strictly necessary to import it here,
     // but leaving it does not cause any issues.
-    use spike_amm::amm_controller;
 
     // --- STRUCTS ---
     
@@ -91,3 +90,4 @@ module spike_amm::flash_loan_router {
         abort 0
     }
 }
+
