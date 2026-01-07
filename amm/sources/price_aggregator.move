@@ -13,7 +13,7 @@
 /// adjusting the `raw` price according to the provided decimals.
 ///
 /// This ensures accurate and consistent pricing across both legacy assets  
-/// and Spike’s AMM ecosystem.
+/// and Spikes AMM ecosystem.
 ///
 module spike_amm::price_aggregator {
 
@@ -27,3 +27,4 @@ module spike_amm::price_aggregator {
         abort 0
     }
 }
+
