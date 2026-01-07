@@ -5,15 +5,17 @@ module spike_amm::flash_loan_router {
     
     use spike_amm::amm_pair;
     use spike_amm::coin_wrapper;
-    // amm_controller no se usa en las firmas, solo se usaba en la lógica interna, 
-    // así que no es estrictamente necesario importarlo aquí, pero no hace daño dejarlo.
+    // amm_controller is not used in function signatures,
+    // it was only used in internal logic.
+    // It is not strictly necessary to import it here,
+    // but leaving it does not cause any issues.
     use spike_amm::amm_controller;
 
     // --- STRUCTS ---
     
-    // Definimos el struct tal cual, ya que se usa en los valores de retorno.
-    // Como es un recibo de Flash Loan, no debería tener abilities (Hot Potato),
-    // a menos que el diseño original permita almacenarlo.
+    // We define this struct as-is since it is used in return values.
+    // As a Flash Loan receipt, it should not have abilities (Hot Potato pattern),
+    // unless the original design explicitly allows it to be stored.
     struct FlashLoanFromPoolAsCoinReceipt<phantom CoinType> {
         pair_receipt: amm_pair::FlashLoanReceipt,
         loan_amount: u64
@@ -82,7 +84,10 @@ module spike_amm::flash_loan_router {
     }
 
     #[view]
-    public fun max_flash_loan_pool(_pair: Object<amm_pair::Pair>, _token: Object<Metadata>): u64 {
+    public fun max_flash_loan_pool(
+        _pair: Object<amm_pair::Pair>,
+        _token: Object<Metadata>
+    ): u64 {
         abort 0
     }
 }
