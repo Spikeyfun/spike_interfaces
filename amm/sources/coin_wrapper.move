@@ -1,6 +1,7 @@
 module spike_amm::coin_wrapper {
     use supra_framework::fungible_asset::{Metadata};
     use supra_framework::object::{Object};
+    use supra_framework::coin::{Coin};
     use std::string::{String};
     use std::option;
 
