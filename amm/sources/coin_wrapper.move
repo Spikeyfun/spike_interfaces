@@ -4,6 +4,11 @@ module spike_amm::coin_wrapper {
     use std::string::{String};
     use std::option;
 
+    struct FlashLoanReceipt<phantom CoinType> {
+        amount: u64,
+        fee: u64
+    }
+
     #[view]
     public fun view_wrapper_by_components(): option::Option<Object<Metadata>> {
         abort 0
@@ -53,4 +58,17 @@ module spike_amm::coin_wrapper {
     public fun get_balance<CoinType>(): u64 {
         abort 0
     }
+
+    #[view]
+    public fun flash_loan<CoinType>(amount: u64): (Coin<CoinType>, FlashLoanReceipt<CoinType>) {
+        abort 0
+    }
+
+    public fun repay_flash_loan<CoinType>(payment: Coin<CoinType>, receipt: FlashLoanReceipt<CoinType>) {
+        abort 0
+    }
+    public fun collect_accumulated_fees<CoinType>() {
+        abort 0
+    }
+    
 }
