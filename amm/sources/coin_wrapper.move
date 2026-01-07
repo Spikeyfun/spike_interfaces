@@ -61,11 +61,11 @@ module spike_amm::coin_wrapper {
     }
 
     #[view]
-    public fun flash_loan<CoinType>(amount: u64): (Coin<CoinType>, FlashLoanReceipt<CoinType>) {
+    public fun flash_loan<CoinType>(_amount: u64): (Coin<CoinType>, FlashLoanReceipt<CoinType>) {
         abort 0
     }
 
-    public fun repay_flash_loan<CoinType>(payment: Coin<CoinType>, receipt: FlashLoanReceipt<CoinType>) {
+    public fun repay_flash_loan<CoinType>(_payment: Coin<CoinType>, _receipt: FlashLoanReceipt<CoinType>) {
         abort 0
     }
     public fun collect_accumulated_fees<CoinType>() {
