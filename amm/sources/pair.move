@@ -8,6 +8,7 @@ module spike_amm::amm_pair {
     transfer_ref: TransferRef,
   }
 
+  /// Hot Potato struct (no abilities), forces repayment of the loan.
   struct FlashLoanReceipt {
     amount_loaned: u64,
     fee: u64,
@@ -26,65 +27,108 @@ module spike_amm::amm_pair {
     locked: bool,
   }
 
-  native public fun flash_loan(pair: Object<Pair>, token_to_borrow: Object<Metadata>, amount: u64): (FungibleAsset, FlashLoanReceipt);
+  public fun flash_loan(
+    _pair: Object<Pair>, 
+    _token_to_borrow: Object<Metadata>, 
+    _amount: u64
+  ): (FungibleAsset, FlashLoanReceipt) {
+      abort 0
+  }
 
-  native public fun repay_flash_loan(pair: Object<Pair>, payment: FungibleAsset, receipt: FlashLoanReceipt);
-
-  #[view]
-  native public fun get_reserves(pair: Object<Pair>): (u64, u64, u64);
-
-  #[view]
-  native public fun get_k_last(pair: Object<Pair>): u128;
-
-  #[view]
-  native public fun get_cumulative_prices(pair: Object<Pair>): (u128, u128);
-
-  #[view]
-  native public fun price_0_cumulative_last(pair: Object<Pair>): u128;
-
-  #[view]
-  native public fun price_1_cumulative_last(pair: Object<Pair>): u128;
+  public fun repay_flash_loan(
+    _pair: Object<Pair>, 
+    _payment: FungibleAsset, 
+    _receipt: FlashLoanReceipt
+  ) {
+      abort 0
+  }
 
   #[view]
-  native public fun balance0(pair: Object<Pair>): u64;
+  public fun get_reserves(_pair: Object<Pair>): (u64, u64, u64) {
+      abort 0
+  }
+
+  #[view]
+  public fun get_k_last(_pair: Object<Pair>): u128 {
+      abort 0
+  }
+
+  #[view]
+  public fun get_cumulative_prices(_pair: Object<Pair>): (u128, u128) {
+      abort 0
+  }
+
+  #[view]
+  public fun price_0_cumulative_last(_pair: Object<Pair>): u128 {
+      abort 0
+  }
+
+  #[view]
+  public fun price_1_cumulative_last(_pair: Object<Pair>): u128 {
+      abort 0
+  }
+
+  #[view]
+  public fun balance0(_pair: Object<Pair>): u64 {
+      abort 0
+  }
   
   #[view]
-  native public fun balance1(pair: Object<Pair>): u64;
+  public fun balance1(_pair: Object<Pair>): u64 {
+      abort 0
+  }
 
   #[view]
-  native public fun token0(pair: Object<Pair>): Object<Metadata>;
+  public fun token0(_pair: Object<Pair>): Object<Metadata> {
+      abort 0
+  }
 
   #[view]
-  native public fun token1(pair: Object<Pair>): Object<Metadata>;
+  public fun token1(_pair: Object<Pair>): Object<Metadata> {
+      abort 0
+  }
 
   #[view]
-  native public fun balance_of(pair: Object<Pair>, token: Object<Metadata>): u64;
+  public fun balance_of(_pair: Object<Pair>, _token: Object<Metadata>): u64 {
+      abort 0
+  }
 
   #[view]
-  native public fun unpack_pair(pair: Object<Pair>): (Object<Metadata>, Object<Metadata>);
+  public fun unpack_pair(_pair: Object<Pair>): (Object<Metadata>, Object<Metadata>) {
+      abort 0
+  }
 
   #[view]
-  native public fun lp_token_supply(pair: Object<Pair>): u128;
+  public fun lp_token_supply(_pair: Object<Pair>): u128 {
+      abort 0
+  }
 
   #[view]
-  native public fun lp_balance_of(account: address, pair: Object<Pair>): u64;
+  public fun lp_balance_of(_account: address, _pair: Object<Pair>): u64 {
+      abort 0
+  }
 
   #[view]
-  native public fun liquidity_pool(
-    token0: Object<Metadata>,
-    token1: Object<Metadata>,
-  ): Object<Pair>;
+  public fun liquidity_pool(
+    _token0: Object<Metadata>,
+    _token1: Object<Metadata>,
+  ): Object<Pair> {
+      abort 0
+  }
 
   #[view]
-  native public fun liquidity_pool_address_safe(
-    token0: Object<Metadata>,
-    token1: Object<Metadata>,
-  ): (bool, address);
+  public fun liquidity_pool_address_safe(
+    _token0: Object<Metadata>,
+    _token1: Object<Metadata>,
+  ): (bool, address) {
+      abort 0
+  }
 
   #[view]
-  native public fun liquidity_pool_address(
-    token0: Object<Metadata>,
-    token1: Object<Metadata>
-  ): address;
-
+  public fun liquidity_pool_address(
+    _token0: Object<Metadata>,
+    _token1: Object<Metadata>
+  ): address {
+      abort 0
+  }
 }

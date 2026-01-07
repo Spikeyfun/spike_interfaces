@@ -1,8 +1,11 @@
 module spike_amm::package_manager {
     use std::string::String;
 
-    native public fun address_exists(name: String): bool;
+    public fun address_exists(_name: String): bool {
+        abort 0
+    }
 
-    native public fun get_address(name: String): address;
-
+    public fun get_address(_name: String): address {
+        abort 0
+    }
 }

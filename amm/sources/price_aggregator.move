@@ -13,14 +13,17 @@
 /// adjusting the `raw` price according to the provided decimals.
 ///
 /// This ensures accurate and consistent pricing across both legacy assets  
-/// and Spike AMM ecosystem.
+/// and Spike’s AMM ecosystem.
 ///
 module spike_amm::price_aggregator {
 
     #[view]
-    native public fun get_token_price_in_usd(token_address: address): (u128, u16);
+    public fun get_token_price_in_usd(_token_address: address): (u128, u16) {
+        abort 0
+    }
 
     #[view]
-    native public fun get_coin_price_in_usd<CoinType>(): (u128, u16);
+    public fun get_coin_price_in_usd<CoinType>(): (u128, u16) {
+        abort 0
+    }
 }
-
