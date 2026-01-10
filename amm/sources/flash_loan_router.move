@@ -3,14 +3,14 @@ module spike_amm::flash_loan_router {
     use supra_framework::fungible_asset::{FungibleAsset, Metadata};
     use supra_framework::object::{Object};
     
-    // Solo importamos lo necesario para definir los TIPOS de los argumentos y retornos.
+    // We only import what is necessary to define argument and return TYPES.
     use spike_amm::amm_pair;
     use spike_amm::coin_wrapper;
 
     // --- STRUCTS ---
     
-    // IMPORTANTE: Aquí mantenemos 'phantom' porque tu contrato real lo usa.
-    // Esto asegura que el hash del tipo sea idéntico al de la red.
+    // IMPORTANT: We keep 'phantom' here because the real contract uses it.
+    // This ensures that the type hash is identical to the one on mainnet.
     struct FlashLoanFromPoolAsCoinReceipt<phantom CoinType> {
         pair_receipt: amm_pair::FlashLoanReceipt,
         loan_amount: u64
