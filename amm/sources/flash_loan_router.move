@@ -28,7 +28,7 @@ module spike_amm::flash_loan_router {
 
     public fun repay_to_vault<CoinType>(
         _payment: Coin<CoinType>,
-        receipt: coin_wrapper::FlashLoanReceipt<CoinType>
+        _receipt: coin_wrapper::FlashLoanReceipt<CoinType>
     ) {
         abort 0
     }
@@ -43,7 +43,7 @@ module spike_amm::flash_loan_router {
     public fun repay_to_pool_as_coin<CoinType>(
         _payment: Coin<CoinType>,
         _receipt: FlashLoanFromPoolAsCoinReceipt<CoinType>,
-        pair: Object<amm_pair::Pair>
+        _fungible_assetpair: Object<amm_pair::Pair>
     ) {
         abort 0
     }
@@ -90,4 +90,3 @@ module spike_amm::flash_loan_router {
         abort 0
     }
 }
-
