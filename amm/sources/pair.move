@@ -1,14 +1,20 @@
 module spike_amm::amm_pair {
-  use supra_framework::fungible_asset::{FungibleStore, FungibleAsset, MintRef, BurnRef, TransferRef, Metadata};
+  use supra_framework::fungible_asset::{FungibleAsset, FungibleStore, MintRef, BurnRef, TransferRef, Metadata};
   use supra_framework::object::{Object};
   
+  // Friends are part of the module's signature
+  friend spike_amm::amm_factory;
+  friend spike_amm::amm_router;
+
+  // --- STRUCTS (Must match the real contract exactly) ---
+
   struct LPTokenRefs has store {
     burn_ref: BurnRef,
     mint_ref: MintRef,
     transfer_ref: TransferRef,
   }
 
-  /// Hot Potato struct (no abilities), forces repayment of the loan.
+  // Hot Potato struct
   struct FlashLoanReceipt {
     amount_loaned: u64,
     fee: u64,
@@ -27,6 +33,54 @@ module spike_amm::amm_pair {
     locked: bool,
   }
 
+  // --- PUBLIC FRIEND FUNCTIONS (These were missing before) ---
+
+  public(friend) fun initialize(
+    _token0: Object<Metadata>,
+    _token1: Object<Metadata>,
+  ): Object<Pair> {
+      abort 0
+  }
+
+  public(friend) fun lock_launchpad_pair(_pair: &Object<Pair>) {
+      abort 0
+  }
+
+  public(friend) fun unlock_launchpad_pair(_pair: &Object<Pair>) {
+      abort 0
+  }
+
+  public(friend) fun mint(
+    _sender: &signer,
+    _fungible_token0: FungibleAsset,
+    _fungible_token1: FungibleAsset,
+    _to: address,
+  ): (u64, Object<Metadata>) {
+      abort 0
+  }
+
+  public(friend) fun burn(
+    _sender: &signer,
+    _pair: Object<Pair>,
+    _amount: u64,
+  ): (FungibleAsset, FungibleAsset) {
+      abort 0
+  }
+
+  public(friend) fun swap(
+    _sender: &signer,
+    _pair: Object<Pair>,
+    _token0_in: FungibleAsset,
+    _amount0_out: u64,
+    _token1_in: FungibleAsset,
+    _amount1_out: u64,
+    _to: address,
+  ): (FungibleAsset, FungibleAsset) {
+      abort 0
+  }
+
+  // --- PUBLIC FUNCTIONS ---
+
   public fun flash_loan(
     _pair: Object<Pair>, 
     _token_to_borrow: Object<Metadata>, 
@@ -42,6 +96,8 @@ module spike_amm::amm_pair {
   ) {
       abort 0
   }
+
+  // --- VIEW FUNCTIONS ---
 
   #[view]
   public fun get_reserves(_pair: Object<Pair>): (u64, u64, u64) {
