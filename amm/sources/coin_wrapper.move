@@ -11,7 +11,11 @@ module spike_amm::coin_wrapper {
     }
 
     #[view]
-    public fun view_wrapper_by_components(): option::Option<Object<Metadata>> {
+    public fun view_wrapper_by_components(
+        _account_address: address, 
+        _module_name: vector<u8>, 
+        _struct_name: vector<u8>
+    ): option::Option<Object<Metadata>> {
         abort 0
     }
 
