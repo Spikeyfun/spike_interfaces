@@ -12,8 +12,8 @@ module spike_amm::flash_loan_router {
     // IMPORTANT: We keep 'phantom' here because the real contract uses it.
     // This ensures that the type hash is identical to the one on mainnet.
     struct FlashLoanFromPoolAsCoinReceipt<phantom CoinType> {
-        pair_receipt: amm_pair::FlashLoanReceipt,
-        loan_amount: u64
+        _pair_receipt: amm_pair::FlashLoanReceipt,
+        _loan_amount: u64
     }
     
     // ===================================================================
@@ -21,28 +21,28 @@ module spike_amm::flash_loan_router {
     // ===================================================================
 
     public fun borrow_from_vault<CoinType>(
-        amount: u64
+        _amount: u64
     ): (Coin<CoinType>, coin_wrapper::FlashLoanReceipt<CoinType>) {
         abort 0
     }
 
     public fun repay_to_vault<CoinType>(
-        payment: Coin<CoinType>,
+        _payment: Coin<CoinType>,
         receipt: coin_wrapper::FlashLoanReceipt<CoinType>
     ) {
         abort 0
     }
 
     public fun borrow_from_pool_as_coin<CoinType>(
-        pair: Object<amm_pair::Pair>,
-        amount: u64
+        _pair: Object<amm_pair::Pair>,
+        _amount: u64
     ): (Coin<CoinType>, FlashLoanFromPoolAsCoinReceipt<CoinType>) {
         abort 0
     }
 
     public fun repay_to_pool_as_coin<CoinType>(
-        payment: Coin<CoinType>,
-        receipt: FlashLoanFromPoolAsCoinReceipt<CoinType>,
+        _payment: Coin<CoinType>,
+        _receipt: FlashLoanFromPoolAsCoinReceipt<CoinType>,
         pair: Object<amm_pair::Pair>
     ) {
         abort 0
@@ -53,17 +53,17 @@ module spike_amm::flash_loan_router {
     // ===================================================================
 
     public fun borrow_fa_from_pool(
-        pair: Object<amm_pair::Pair>,
-        token: Object<Metadata>,
-        amount: u64
+        _pair: Object<amm_pair::Pair>,
+        _token: Object<Metadata>,
+        _amount: u64
     ): (FungibleAsset, amm_pair::FlashLoanReceipt) {
         abort 0
     }
 
     public fun repay_fa_to_pool(
-        pair: Object<amm_pair::Pair>,
-        payment: FungibleAsset,
-        receipt: amm_pair::FlashLoanReceipt
+        _pair: Object<amm_pair::Pair>,
+        _payment: FungibleAsset,
+        _receipt: amm_pair::FlashLoanReceipt
     ) {
         abort 0
     }
@@ -90,3 +90,4 @@ module spike_amm::flash_loan_router {
         abort 0
     }
 }
+
