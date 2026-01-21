@@ -68,6 +68,10 @@ module spike_amm::flash_loan_router {
         abort 0
     }
 
+    public fun get_internal_metadata<CoinType>(): Object<Metadata> {
+        abort 0
+    }
+
     // ===================================================================
     // VIEW FUNCTIONS
     // ===================================================================
