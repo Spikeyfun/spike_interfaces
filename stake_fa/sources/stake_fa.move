@@ -58,6 +58,24 @@ module spike_staking::stake_fa {
         deposit_amount: u64
     );
 
+    
+    /// Deposits reward assets to specific pool, but instead of extending duration,
+    /// it increases the reward_per_sec (RPS) for the remaining duration.
+    native public fun deposit_reward_for_rate_growth(
+        depositor: &signer,
+        pool_key: PoolIdentifier,
+        deposit_amount: u64
+    );
+
+    /// Restart a finished pool with new rewards and a new duration.
+    /// This recalculates RPS based on the new deposit / new duration.
+    native public fun renew_pool(
+        depositor: &signer,
+        pool_key: PoolIdentifier,
+        deposit_amount: u64,
+        new_duration: u64
+    );
+
     /// Stakes user assets in pool.
     ///     * `user` - account that making a stake.
     ///     * `pool_addr` - address under which pool are stored.
