@@ -68,6 +68,14 @@ module spike_amm::flash_loan_router {
         abort 0
     }
 
+    public fun native_fa_to_coin<CoinType>(fa: FungibleAsset): Coin<CoinType> {
+        abort 0
+    }
+
+    public fun coin_to_native_fa<CoinType>(c: Coin<CoinType>): FungibleAsset {
+        abort 0
+    }
+
     public fun get_internal_metadata<CoinType>(): Object<Metadata> {
         abort 0
     }
@@ -77,7 +85,12 @@ module spike_amm::flash_loan_router {
     // ===================================================================
 
     #[view]
-    public fun expected_fee(_amount: u64): u64 {
+    public fun check_best_liquidity_source<CoinType>(): u8 {
+        abort 0
+    }
+
+    #[view]
+    public fun expected_fee<CoinType>(_amount: u64): u64 {
         abort 0
     }
 
@@ -91,6 +104,11 @@ module spike_amm::flash_loan_router {
         _pair: Object<amm_pair::Pair>, 
         _token: Object<Metadata>
     ): u64 {
+        abort 0
+    }
+
+    #[view]
+    public fun get_native_metadata<CoinType>(): Object<Metadata> {
         abort 0
     }
 }
