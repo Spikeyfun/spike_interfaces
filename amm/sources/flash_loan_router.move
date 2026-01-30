@@ -90,7 +90,7 @@ module spike_amm::flash_loan_router {
     }
 
     #[view]
-    public fun expected_fee<CoinType>(_amount: u64): u64 {
+    public fun expected_fee(_amount: u64): u64 {
         abort 0
     }
 
