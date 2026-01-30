@@ -68,11 +68,11 @@ module spike_amm::flash_loan_router {
         abort 0
     }
 
-    public fun native_fa_to_coin<CoinType>(fa: FungibleAsset): Coin<CoinType> {
+    public fun native_fa_to_coin<CoinType>(_fa: FungibleAsset): Coin<CoinType> {
         abort 0
     }
 
-    public fun coin_to_native_fa<CoinType>(c: Coin<CoinType>): FungibleAsset {
+    public fun coin_to_native_fa<CoinType>(_c: Coin<CoinType>): FungibleAsset {
         abort 0
     }
 
