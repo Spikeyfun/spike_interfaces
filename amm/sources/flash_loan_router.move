@@ -85,7 +85,9 @@ module spike_amm::flash_loan_router {
     // ===================================================================
 
     #[view]
-    public fun check_best_liquidity_source<CoinType>(): u8 {
+    public fun check_best_liquidity_source<CoinType>(
+        _pair: Object<amm_pair::Pair>
+    ): u8 {
         abort 0
     }
 
@@ -112,3 +114,4 @@ module spike_amm::flash_loan_router {
         abort 0
     }
 }
+
