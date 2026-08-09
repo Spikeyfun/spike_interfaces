@@ -80,6 +80,20 @@ module spike_amm::flash_loan_router {
         abort 0
     }
 
+    public fun borrow_fa_from_vault(
+        _token: Object<Metadata>,
+        _amount: u64
+    ): (FungibleAsset, coin_wrapper::FlashLoanReceiptFA) {
+        abort 0
+    }
+
+    public fun repay_fa_to_vault(
+        _payment: FungibleAsset,
+        _receipt: coin_wrapper::FlashLoanReceiptFA
+    ) {
+        abort 0
+    }
+
     // ===================================================================
     // VIEW FUNCTIONS
     // ===================================================================
@@ -102,6 +116,11 @@ module spike_amm::flash_loan_router {
     }
 
     #[view]
+    public fun max_flash_loan_pool_smart<CoinType>(_pair: Object<amm_pair::Pair>): u64 {
+        abort 0
+    }
+
+    #[view]
     public fun max_flash_loan_pool(
         _pair: Object<amm_pair::Pair>, 
         _token: Object<Metadata>
@@ -111,6 +130,21 @@ module spike_amm::flash_loan_router {
 
     #[view]
     public fun get_native_metadata<CoinType>(): Object<Metadata> {
+        abort 0
+    }
+
+    #[view]
+    public fun check_best_liquidity_source_fa(
+        _pair: Object<amm_pair::Pair>,
+        _token: Object<Metadata>
+    ): u8 {
+        abort 0
+    }
+
+    #[view]
+    public fun max_flash_loan_vault_fa(
+        _token: Object<Metadata>
+    ): u64 {
         abort 0
     }
 }
