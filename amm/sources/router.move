@@ -32,6 +32,34 @@ module spike_amm::amm_router {
         abort 0
     }
 
+    public fun add_liquidity_from_launchpad_fa_beta(
+        _sender: &signer,
+        _token: address,
+        _quote_token: address,
+        _amount_token_desired: u64,
+        _amount_token_min: u64,
+        _amount_quote_desired: u64,
+        _amount_quote_min: u64,
+        _to: address,
+        _deadline: u64
+    ): (u64, u64, u64, Object<Metadata>) {
+        abort 0
+    }
+
+    public fun add_liquidity_from_launchpad_fa(
+        _sender: &signer,
+        _token: address,
+        _quote_token: address,
+        _amount_token_desired: u64,
+        _amount_token_min: u64,
+        _amount_quote_desired: u64,
+        _amount_quote_min: u64,
+        _to: address,
+        _deadline: u64
+    ) {
+        abort 0
+    }
+
     public fun add_liquidity_from_launchpad_aux_beta(
         _sender: &signer,
         _token: address,
