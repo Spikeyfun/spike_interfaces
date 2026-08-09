@@ -10,6 +10,12 @@ module spike_amm::coin_wrapper {
         fee: u64
     }
 
+    struct FlashLoanReceiptFA {
+        amount: u64,
+        fee: u64,
+        metadata: Object<Metadata>
+    }
+
     #[view]
     public fun view_wrapper_by_components(
         _account_address: address, 
@@ -73,6 +79,30 @@ module spike_amm::coin_wrapper {
         abort 0
     }
     public fun collect_accumulated_fees<CoinType>() {
+        abort 0
+    }
+
+    // ===================================================================
+    // V2 UPGRADE: FA NATIVE SUPPORT
+    // ===================================================================
+
+    public fun flash_loan_fa(
+        _metadata: Object<Metadata>,
+        _amount: u64
+    ): (FungibleAsset, FlashLoanReceiptFA) {
+        abort 0
+    }
+
+    public fun repay_flash_loan_fa(
+        _payment: FungibleAsset,
+        _receipt: FlashLoanReceiptFA
+    ) {
+        abort 0
+    }
+
+    public fun collect_accumulated_fees_fa(
+
+    ) {
         abort 0
     }
     
